@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'vazirmatn';
+}
+
+body {
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 20px;
+    direction: rtl;
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.profil-section {
+    background: #fcd8a7;
+    padding: 20px;
+    border-radius: 15px 15px 0 0;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+}
+
+.profil-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.username {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.handle {
+    color: tomato;
+    font-size: 14px;
+    margin-top: -5px;
+    direction: ltr;
+}
+
+.logout {
+    background: #f4c27f;
+    color: black;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    width: 100px;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+.todo-section {
+    background: white;
+    padding: 0 20px 20px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+}
+
+.clock-container {
+    margin: 20px auto;
+}
+
+.clock {
+    width: 100px;
+    height: 100px;
+    background: #eeecdf;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #f4c27f;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    margin: 20px auto;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform:translateX(-50%) rotate(0deg);
+    border-radius: 5px;
+}
+
+.hour-hand {
+    width: 4px;
+    height: 4px;
+    background: gray;
+    animation: rotate-hour 43200s linear infinite;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 45px;
+    background: tomato;
+    animation: rotate-minute 3600s linear infinite;
+}
+
+.second-hand {
+    width: 2px;
+    height: 47px;
+    background: #f0c993;
+    animation: rotate-second 60s linear infinite;
+}
+
+@keyframes rotate-hour {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate-minute {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate-second {
+    from {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.task-container {
+    width: 100%;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.task-header {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.task-title {
+    font-weight: 15px;
+    text-align: right;
+    margin: 0;
+}
+
+.add-btn {
+    background: #fff;
+    color: #f4c27f;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #f4c27f;
+    border-radius: 50%;
+    display: grid;
+    cursor: pointer;
+    place-items: center;
+}
+
+.task-list {
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    gap: 5px;
+    text-align: right;
+    height: 150px;
+    overflow-y: auto;
+}
+
+.task input[type='checkbox'] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #f4c27f;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.task input[type='checkbox']:checked {
+    background-color: #f4c27f;
+    border: 2px solid #f4c27f;
+}
